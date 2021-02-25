@@ -1,4 +1,5 @@
 class TypesHelper {
+  // ignore: missing_return
   static int toInt(num val) {
     try {
       if (val == null) {
@@ -14,6 +15,7 @@ class TypesHelper {
     }
   }
 
+  // ignore: missing_return
   static double toDouble(num val) {
     try {
       if (val == null) {

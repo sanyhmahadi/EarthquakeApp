@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:earthquake_app/earthquake_app/model/earthQuake_model.dart';
 import 'package:http/http.dart';
 

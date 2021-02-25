@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:earthquake_app/earthquake_app/model/earthQuake_model.dart';
 import 'package:earthquake_app/earthquake_app/network/network.dart';
 import 'package:flutter/material.dart';
@@ -31,8 +30,8 @@ class _EarthQuakeAppState extends State<EarthQuakeApp> {
       body: Stack(
         children: [
           _builGoogleMap(context),
-          _zoomMinus(),
           _zoomPluse(),
+          _zoomMinus(),
         ],
       ),
       floatingActionButton: FloatingActionButton.extended(
@@ -42,6 +41,21 @@ class _EarthQuakeAppState extends State<EarthQuakeApp> {
         label: Text("Find EarthQuakes"),
       ),
     );
+  }
+
+  _builGoogleMap(BuildContext context) {
+    return Container(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        child: GoogleMap(
+          mapType: MapType.hybrid,
+          initialCameraPosition:
+              CameraPosition(target: LatLng(31.7134184, 120.2599098), zoom: 3),
+          onMapCreated: (GoogleMapController controller) {
+            _controller.complete(controller);
+          },
+          markers: Set<Marker>.of(_markerList),
+        ));
   }
 
   Widget _zoomPluse() {
@@ -63,6 +77,12 @@ class _EarthQuakeAppState extends State<EarthQuakeApp> {
     );
   }
 
+  Future<void> _plus(double zoomVlaue) async {
+    final GoogleMapController controller = await _controller.future;
+    controller.animateCamera(CameraUpdate.newCameraPosition(CameraPosition(
+        target: (LatLng(31.7134184, 120.2599098)), zoom: zoomVlaue)));
+  }
+
   Widget _zoomMinus() {
     return Padding(
       padding: const EdgeInsets.only(top: 48.0),
@@ -82,18 +102,10 @@ class _EarthQuakeAppState extends State<EarthQuakeApp> {
     );
   }
 
-  _builGoogleMap(BuildContext context) {
-    return Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        child: GoogleMap(
-            onMapCreated: (GoogleMapController controller) {
-              _controller.complete(controller);
-            },
-            initialCameraPosition: CameraPosition(
-                target: LatLng(31.7134184, 120.2599098), zoom: 3),
-            markers: Set<Marker>.of(_markerList),
-            mapType: MapType.hybrid));
+  Future<void> _minus(double zoomVlaue) async {
+    final GoogleMapController controller = await _controller.future;
+    controller.animateCamera(CameraUpdate.newCameraPosition(CameraPosition(
+        target: (LatLng(31.7134184, 120.2599098)), zoom: zoomVlaue)));
   }
 
   void findQuakes() {
@@ -105,7 +117,9 @@ class _EarthQuakeAppState extends State<EarthQuakeApp> {
 
   void _handleResponse() {
     setState(() {
+      // ignore: non_constant_identifier_names
       _earthQuakeData.then((EarthQuake) => {
+            // ignore: non_constant_identifier_names
             EarthQuake.features.forEach((EarthQuake) => {
                   _markerList.add(Marker(
                       markerId: MarkerId(EarthQuake.id),
@@ -120,17 +134,5 @@ class _EarthQuakeAppState extends State<EarthQuakeApp> {
                 })
           });
     });
-  }
-
-  Future<void> _minus(double zoomVlaue) async {
-    final GoogleMapController controller = await _controller.future;
-    controller.animateCamera(CameraUpdate.newCameraPosition(CameraPosition(
-        target: (LatLng(31.7134184, 120.2599098)), zoom: zoomVlaue)));
-  }
-
-  Future<void> _plus(double zoomVlaue) async {
-    final GoogleMapController controller = await _controller.future;
-    controller.animateCamera(CameraUpdate.newCameraPosition(CameraPosition(
-        target: (LatLng(31.7134184, 120.2599098)), zoom: zoomVlaue)));
   }
 }

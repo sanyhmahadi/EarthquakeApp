@@ -17,13 +17,21 @@ class EarthQuake {
     this._bbox = bbox;
   }
 
+  // ignore: unnecessary_getters_setters
   String get type => _type;
+  // ignore: unnecessary_getters_setters
   set type(String type) => _type = type;
+  // ignore: unnecessary_getters_setters
   Metadata get metadata => _metadata;
+  // ignore: unnecessary_getters_setters
   set metadata(Metadata metadata) => _metadata = metadata;
+  // ignore: unnecessary_getters_setters
   List<Features> get features => _features;
+  // ignore: unnecessary_getters_setters
   set features(List<Features> features) => _features = features;
+  // ignore: unnecessary_getters_setters
   List<double> get bbox => _bbox;
+  // ignore: unnecessary_getters_setters
   set bbox(List<double> bbox) => _bbox = bbox;
 
   EarthQuake.fromJson(Map<String, dynamic> json) {
@@ -77,17 +85,29 @@ class Metadata {
     this._count = count;
   }
 
+  // ignore: unnecessary_getters_setters
   int get generated => _generated;
+  // ignore: unnecessary_getters_setters
   set generated(int generated) => _generated = generated;
+  // ignore: unnecessary_getters_setters
   String get url => _url;
+  // ignore: unnecessary_getters_setters
   set url(String url) => _url = url;
+  // ignore: unnecessary_getters_setters
   String get title => _title;
+  // ignore: unnecessary_getters_setters
   set title(String title) => _title = title;
+  // ignore: unnecessary_getters_setters
   int get status => _status;
+  // ignore: unnecessary_getters_setters
   set status(int status) => _status = status;
+  // ignore: unnecessary_getters_setters
   String get api => _api;
+  // ignore: unnecessary_getters_setters
   set api(String api) => _api = api;
+  // ignore: unnecessary_getters_setters
   int get count => _count;
+  // ignore: unnecessary_getters_setters
   set count(int count) => _count = count;
 
   Metadata.fromJson(Map<String, dynamic> json) {
@@ -124,13 +144,21 @@ class Features {
     this._id = id;
   }
 
+  // ignore: unnecessary_getters_setters
   String get type => _type;
+  // ignore: unnecessary_getters_setters
   set type(String type) => _type = type;
+  // ignore: unnecessary_getters_setters
   Properties get properties => _properties;
+  // ignore: unnecessary_getters_setters
   set properties(Properties properties) => _properties = properties;
+  // ignore: unnecessary_getters_setters
   Geometry get geometry => _geometry;
+  // ignore: unnecessary_getters_setters
   set geometry(Geometry geometry) => _geometry = geometry;
+  // ignore: unnecessary_getters_setters
   String get id => _id;
+  // ignore: unnecessary_getters_setters
   set id(String id) => _id = id;
 
   Features.fromJson(Map<String, dynamic> json) {
@@ -240,58 +268,115 @@ class Properties {
     this._type = type;
     this._title = title;
   }
-
+  // ignore: unnecessary_getters_setters
   double get mag => _mag;
+  // ignore: unnecessary_getters_setters
   set mag(double mag) => _mag = mag;
+  // ignore: unnecessary_getters_setters
   String get place => _place;
+  // ignore: unnecessary_getters_setters
   set place(String place) => _place = place;
+  // ignore: unnecessary_getters_setters
   int get time => _time;
+  // ignore: unnecessary_getters_setters
   set time(int time) => _time = time;
+  // ignore: unnecessary_getters_setters
   int get updated => _updated;
+  // ignore: unnecessary_getters_setters
   set updated(int updated) => _updated = updated;
+  // ignore: unnecessary_getters_setters
   Null get tz => _tz;
+  // ignore: unnecessary_getters_setters
   set tz(Null tz) => _tz = tz;
+  // ignore: unnecessary_getters_setters
+  // ignore: unnecessary_getters_setters
   String get url => _url;
+  // ignore: unnecessary_getters_setters
+  // ignore: unnecessary_getters_setters
   set url(String url) => _url = url;
+  // ignore: unnecessary_getters_setters
+  // ignore: unnecessary_getters_setters
   String get detail => _detail;
+  // ignore: unnecessary_getters_setters
+  // ignore: unnecessary_getters_setters
   set detail(String detail) => _detail = detail;
+  // ignore: unnecessary_getters_setters
+  // ignore: unnecessary_getters_setters
   int get felt => _felt;
+  // ignore: unnecessary_getters_setters
   set felt(int felt) => _felt = felt;
+  // ignore: unnecessary_getters_setters
   double get cdi => _cdi;
+  // ignore: unnecessary_getters_setters
   set cdi(double cdi) => _cdi = cdi;
+  // ignore: unnecessary_getters_setters
   double get mmi => _mmi;
+  // ignore: unnecessary_getters_setters
+  // ignore: unnecessary_getters_setters
   set mmi(double mmi) => _mmi = mmi;
+  // ignore: unnecessary_getters_setters
   String get alert => _alert;
+  // ignore: unnecessary_getters_setters
   set alert(String alert) => _alert = alert;
+  // ignore: unnecessary_getters_setters
   String get status => _status;
+  // ignore: unnecessary_getters_setters
   set status(String status) => _status = status;
+  // ignore: unnecessary_getters_setters
   int get tsunami => _tsunami;
+  // ignore: unnecessary_getters_setters
   set tsunami(int tsunami) => _tsunami = tsunami;
+  // ignore: unnecessary_getters_setters
   int get sig => _sig;
+  // ignore: unnecessary_getters_setters
   set sig(int sig) => _sig = sig;
+  // ignore: unnecessary_getters_setters
   String get net => _net;
+  // ignore: unnecessary_getters_setters
   set net(String net) => _net = net;
+  // ignore: unnecessary_getters_setters
   String get code => _code;
+  // ignore: unnecessary_getters_setters
   set code(String code) => _code = code;
+  // ignore: unnecessary_getters_setters
   String get ids => _ids;
+  // ignore: unnecessary_getters_setters
   set ids(String ids) => _ids = ids;
+  // ignore: unnecessary_getters_setters
   String get sources => _sources;
+  // ignore: unnecessary_getters_setters
   set sources(String sources) => _sources = sources;
+  // ignore: unnecessary_getters_setters
   String get types => _types;
+  // ignore: unnecessary_getters_setters
   set types(String types) => _types = types;
+  // ignore: unnecessary_getters_setters
   int get nst => _nst;
+  // ignore: unnecessary_getters_setters
   set nst(int nst) => _nst = nst;
+  // ignore: unnecessary_getters_setters
   double get dmin => _dmin;
+  // ignore: unnecessary_getters_setters
   set dmin(double dmin) => _dmin = dmin;
+  // ignore: unnecessary_getters_setters
   double get rms => _rms;
+  // ignore: unnecessary_getters_setters
   set rms(double rms) => _rms = rms;
+  // ignore: unnecessary_getters_setters
   int get gap => _gap;
+  // ignore: unnecessary_getters_setters
   set gap(int gap) => _gap = gap;
+  // ignore: unnecessary_getters_setters
   String get magType => _magType;
+  // ignore: unnecessary_getters_setters
   set magType(String magType) => _magType = magType;
+  // ignore: unnecessary_getters_setters
   String get type => _type;
+  // ignore: unnecessary_getters_setters
   set type(String type) => _type = type;
+  // ignore: unnecessary_getters_setters
   String get title => _title;
+  // ignore: unnecessary_getters_setters
   set title(String title) => _title = title;
 
   Properties.fromJson(Map<String, dynamic> json) {
@@ -364,9 +449,13 @@ class Geometry {
     this._coordinates = coordinates;
   }
 
+  // ignore: unnecessary_getters_setters
   String get type => _type;
+  // ignore: unnecessary_getters_setters
   set type(String type) => _type = type;
+  // ignore: unnecessary_getters_setters
   List<double> get coordinates => _coordinates;
+  // ignore: unnecessary_getters_setters
   set coordinates(List<double> coordinates) => _coordinates = coordinates;
 
   Geometry.fromJson(Map<String, dynamic> json) {
