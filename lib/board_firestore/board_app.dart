@@ -25,7 +25,7 @@ class _BoardAppState extends State<BoardApp> {
           return ListView.builder(
             itemCount: snapshot.data.docs.length,
             itemBuilder: (context, int index) {
-              return Text(snapshot.data.docs[index]['description']);
+              return Text(snapshot.data.docs[index]['title']);
             },
           );
         },
