@@ -32,6 +32,8 @@ dependencies:
   font_awesome_flutter: ^8.11.0
   http: ^0.12.2
   intl: ^0.16.1
+  cloud_firestore: ^0.16.0+1
+  firebase_core :
 
 dev_dependencies:
   flutter_test:
